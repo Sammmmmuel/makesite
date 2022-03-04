@@ -2,8 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Untitled Custom SSG</title>
+  <title>Glogs</title>
+
+  <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
 </head>
 <body>
+  <article>
+    <h1>{{ .Title }}</h1>
+    <h4>{{ .ReadingTime }}</h4>
+    
+    {{ with .Paragraphs }}
+        {{ range . }}
+          <p>
+            {{ . }}
+          </p>
+        {{ end }}
+    {{ end }}
+  </article>
 </body>
 </html>
